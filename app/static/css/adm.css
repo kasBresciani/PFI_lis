@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card {
+    min-width: 300px;
+    min-height: 200px;
+    max-width: 500px;
+
+    margin-top: 2em;
+
+    display: flex;
+}
+
+.card-text {
+    margin-bottom: 2em;
+}
+
+.card-link {
+    text-decoration: none;
+    color: white;
+    border-radius: 60px;
+    padding: 10px;
+}
+
+.aceitar {
+    background-color: green;
+}
+
+.remover {
+    background-color: red;
+}

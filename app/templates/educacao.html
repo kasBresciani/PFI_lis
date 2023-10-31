@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Educação Infantil</title>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+      <!-- CSS links -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/desc.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="navbar-brand" width="90">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/geral">Geral</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contato">Entre em Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tea">TEA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/acidentes">Acidentes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/educacao">Educação Infantil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/terceira-idade">Terceira Idade</a>
+                    </li>
+                </ul>
+                <div class="navbar-text">
+                    <div class="user-profile">
+
+                        {% if foto != '' %}
+
+                        <img src="data:image/jpg;base64,{{foto}}" alt="Imagem" width="70" id="profile-img" style="border-radius: 100%;" >
+
+                        {% else %}
+
+                        <img src="{{url_for('static', filename='images/user.png') }}" alt="Imagem" width="70" id="profile-img" style="border-radius: 100%;" >
+
+                        {% endif %}
+
+                        <div class="profile-menu" id="profile-menu">
+                            <div class="text-center">
+                                {% if foto != '' %}
+
+                                <img src="data:image/jpg;base64,{{foto}}" alt="Imagem" width="70" id="profile-img" style="border-radius: 100%;" >
+
+                                {% else %}
+
+                                <img src="{{url_for('static', filename='images/user.png') }}" alt="Imagem" width="70" id="profile-img" style="border-radius: 100%;" >
+
+                                {% endif %}
+                                <a href="/alterar-foto"><p>Alterar foto</p></a>
+                                <hr class="divider">
+                            </div>
+                            {% if session['adm'] == True %}
+                                <div style="display: flex; justify-content: center; align-items: center;">
+                                    <a class="btn btn-sair" href="/adm" style="color: white;">ADM</a>
+                                </div> <br>
+                            {% endif %}
+                            <div style="display: flex; justify-content: center; align-items: center;">
+                                <a class="btn btn-sair" href="/sair" style="color: white;">Sair</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+      <main>
+        <div class="container">
+            <div class="card-title">Como corrigir a Criança da maneira certa?</div>
+            <div class="card-text">
+                <p>
+                    Devido a correria do dia a dia, muitos pais não priorizam um tempo para estudar e ler sobre a educação da criança, antigamente as correções que as crianças recebiam normalmente era um castigo, que por muitas vezes por simples atos geram traumas e inseguranças para o resto da vida, é importante saber corrigir a criança da maneira correta, entender que ela possui escolhas e opiniões.
+                    <hr>
+                    Para cobrar uma criança, é preciso que ela saiba o motivo de estar errada, se a questão nunca foi trabalhada, ela não sabe entender o porquê está sendo corrigida. Por isso, é importante o diálogo, logo, sempre cobre quando tal situação já foi conversada, caso não foi, explique primeiramente e depois corrija.
+                    <br> <br.
+                    Não aja de cabeça quente com a criança, no calor do momento, situações podem sair do controle, gerando palavras que podem machucar o emocional da criança, então é importante se acalmar e depois tomar a decisão, sendo importante para a própria criança pensar na sua atitude.
+                    <br> <br>
+                    Sempre cumpra o que prometeu, se você fez um acordo com seu filho e ele concordou, exemplo “vou te dar um doce se você se comportar” cumpra, também serve para as correções, “não vai assistir TV se não se comportar”, é preciso cumprir para que ele entenda a sua própria autonomia. As palavras precisam ser usadas da maneira correta, jamais com xingamentos e comentários ofensivos que afetam a autoestima do seu filho gerando insegurança futura e problemas de socialização.
+                    <br> <br>
+                    Não deve-se punir seu filho por atos acidentais, no qual ele não teve a intenção, como derrubar um alimento no chão, ensine ele a arrumar aquilo, de forma descontraída, é preciso que ele entenda que não teve culpa daquilo. A correção é válida quando o mesmo teve a intenção de um ato, caso contrário não serve. 
+                    <br> <br>
+                    É aconselhado não corrigir seu filho em público, tais situações geram sentimento constrangedor na criança, gerando efeito rebote e a isolação social.
+                    
+                </p>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="{{ url_for('static', filename='javascript/script.js') }}"></script>
+
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

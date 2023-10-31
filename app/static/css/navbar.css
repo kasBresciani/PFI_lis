@@ -1,0 +1,76 @@
+.navbar {
+    border-bottom: 5px solid #FFBD59;
+}
+.navbar-nav .nav-link {
+    color: #FF66C4; /* Cor do texto */
+    font-size: 22px; /* Tamanho da fonte */
+    margin-right: 20px; /* Espaço entre os links */
+    font-weight: 700;
+  }
+.navbar-nav .nav-link:hover {
+    color: white;
+}
+.navbar-nav .nav-link:last-child {
+    margin-right: 20px; /* Remove o espaço à direita do último link */
+}
+.navbar-brand{
+    margin-right: 70px;
+}
+
+
+.profile-menu {
+    width: 200px;
+    padding: 10px;
+    border-radius: 30px;
+    display: none;
+    position: absolute;
+    right: 0; 
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1000;
+}
+
+.user-profile {
+    position: relative;
+    cursor: pointer;
+}
+.profile-menu button {
+    margin: 10px;
+}
+.profile-menu .text-center {
+    text-align: center;
+}
+
+.divider {
+    border-top: 1px solid black;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.profile-menu .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-conta{
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    font-weight: 400;
+}
+
+.btn-sair{
+    width: 75px;
+    background-color: red;
+    color: white;
+    border-radius: 20px;
+    font-weight: 400;
+}
+.btn-salvar{
+    width: 75px;
+    background-color: green;
+    color: white;
+    border-radius: 20px;
+    font-weight: 400;
+}

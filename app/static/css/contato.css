@@ -1,0 +1,12 @@
+.card{
+    background-color: #FFBD59;
+}
+.card-img-top{
+    width: 20%;
+}
+.card-title{
+    color: white;
+}
+.card-text{
+    font-weight: 700;
+}

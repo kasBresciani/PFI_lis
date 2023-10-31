@@ -1,0 +1,69 @@
+.container {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background: linear-gradient(90deg, #ff66c4, #ffde59);
+    border-radius: 20px;
+}
+
+.user-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.add-photo {
+    margin-top: 10px;
+    color: white;
+    font-weight: 700;
+}
+
+.form-group {
+    margin-top: 20px;
+}
+
+.form-group input {
+    width: 45%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+}
+
+.form-group .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-group .row a {
+    text-decoration: none;
+    margin: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: 700;
+}
+
+.form-group .row a:hover {
+    color: aqua;
+ }
+.btn-login a{
+    text-decoration: none;
+    color: black;
+}
+.btn-login {
+    background-color: white;
+    color: black;
+    font-weight: 700;
+    border-radius: 30px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 10px;
+}
+.btn-login:hover{
+    background-color: azure;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Acidentes</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- CSS links -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/desc.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="navbar-brand" width="90">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/geral">Geral</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contato">Entre em Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tea">TEA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/acidentes">Acidentes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/educacao">Educação Infantil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/terceira-idade">Terceira Idade</a>
+                    </li>
+                </ul>
+                <div class="navbar-text">
+                    <div class="user-profile">
+
+                        {% if foto != '' %}
+
+                        <img src="data:image/jpg;base64,{{foto}}" alt="Imagem" width="70" id="profile-img" style="border-radius: 100%;" >
+
+                        {% else %}
+
+                        <img src="{{url_for('static', filename='images/user.png') }}" alt="Imagem" width="70" id="profile-img" style="border-radius: 100%;" >
+
+                        {% endif %}
+
+                        <div class="profile-menu" id="profile-menu">
+                            <div class="text-center">
+                                {% if foto != '' %}
+
+                                <img src="data:image/jpg;base64,{{foto}}" alt="Imagem" width="70" id="profile-img" style="border-radius: 100%;" >
+
+                                {% else %}
+
+                                <img src="{{url_for('static', filename='images/user.png') }}" alt="Imagem" width="70" id="profile-img" style="border-radius: 100%;" >
+
+                                {% endif %}
+                                <a href="/alterar-foto"><p>Alterar foto</p></a>
+                                <hr class="divider">
+                            </div>
+                            {% if session['adm'] == True %}
+                                <div style="display: flex; justify-content: center; align-items: center;">
+                                    <a class="btn btn-sair" href="/adm" style="color: white;">ADM</a>
+                                </div> <br>
+                            {% endif %}
+                            <div style="display: flex; justify-content: center; align-items: center;">
+                                <a class="btn btn-sair" href="/sair" style="color: white;">Sair</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+      <main>
+        <div class="container">
+            <div class="card-title">Como agir com uma pessoa que sofreu  um acidente recente?</div>
+            <div class="card-text">
+                
+                <p>
+                    Para saber como agir com pessoas que sofreram algum acidente é necessário saber o que é gatilho emocional.
+                    <hr>
+                    Cada indivíduo possui seus próprios gatilhos, que são desencadeados de acordo com suas experiências de vida e crenças pessoais. O que pode causar intensa emoção em uma pessoa pode não ter o mesmo efeito em outra. Por isso, a identificação e o tratamento dos gatilhos são complexos.
+                    Embora algumas pessoas possam considerar os gatilhos emocionais como “frescura”, eles podem causar experiências muito desagradáveis. Quando se tem consciência de seus próprios gatilhos, as pessoas podem evitá-los e, assim, não sofrer os efeitos de uma intensa descarga emocional. No entanto, como mencionado anteriormente, é difícil identificar o que é capaz de causar tanto desconforto.
+                    Os gatilhos emocionais são como “barreiras” que impedem as pessoas de esquecer determinados acontecimentos e se desvencilhar de crenças, opiniões e valores rígidos.
+                    <hr>
+                    Diante a essas informações, é válido ressaltar que quando se tem conhecimento que alguém próximo a ti sofreu um acidente recentemente, que pode ter gerado um trauma, é preciso ser muito cuidadoso nas palavras, nas perguntas, no assunto, nos lugares, pois pequenos gestos, como passar em lugar semelhante ao acidente, ouvir uma música que remeta ao acontecido ou entrar em um assunto, como piadas e brincadeiras, pode gerar gatilho emocional a pessoa que está enfrentando este processo delicado. Portanto, para se comunicar e agir com pessoas que sofreram um acidente recentemente é importante explorar assuntos e lugares diferentes para que a pessoa se distraia e possa relaxar, é de extrema importância ouvir a pessoa, sem expressar opiniões de julgamentos, apenas acolher nesse período sensível. 
+                   <hr>
+                    É importante adaptar o ambiente para receber uma pessoa que sofreu acidente no qual sofreu com limitações físicas.
+                    
+                    As cadeiras, camas, poltronas e vasos sanitários com alturas superiores às convencionais podem auxiliar a pessoa cuidada a sentar, deitar e levantar com mais facilidade. Essas adaptações podem ser feitas pelo cuidador ou outro membro da família. Além disso, existem levantadores de cama, cadeiras e vasos sanitários disponíveis em lojas especializadas.   
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='javascript/script.js') }}"></script>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

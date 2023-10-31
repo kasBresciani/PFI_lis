@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Cadastro</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- CSS links -->
+    <link rel="stylesheet" href="./../static/css/styles.css">
+    <link rel="stylesheet" href="./../static/css/styles-log.css">
+</head>
+<body>
+
+    <main>
+        <div class="container">
+            <div class="user-photo">
+                <label for="upload-photo" class="upload-button"><img id="user-image" src="./../static/images/user.png" alt=""></label>
+                <input type="file" id="upload-photo" accept="image/*" style="display:none;">
+            </div>
+            <form action="/cadastrar" method="post" enctype="multipart/form-data">
+                <div class="add-photo">
+                    <div class="add-photo">Adicione uma foto de perfil <br> <input type="file" name="foto"></div>
+                </div>
+                <div class="form-group">
+                    <div>
+                        <input type="text" placeholder="Nome" name="nome">
+                    </div>
+                    <div class="email-field">
+                        <input type="email" placeholder="Email" name="email">
+                    </div>
+                    <div class="password-field">
+                        <input type="password" placeholder="Senha" name="senha">
+                    </div>
+                    <div class="password-field">
+                        <input type="password" placeholder="Confirmar Senha" name="confirmar_senha">
+                    </div>
+                    <div>
+                        <label for="date" style="color: white; font-weight: 500;">Data de nascimento:</label> <br>
+                        <input id="date" type="date" name="data_nascimento">
+                    </div>
+                </div>
+                <button class="btn-login">Cadastrar</button> <br>
+            </form>
+            <a href="/entrar" style="color: white; text-decoration: none; font-weight: 600;">Já possui uma conta?</a>
+        </div>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="flash">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+    </main>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

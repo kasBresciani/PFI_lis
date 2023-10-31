@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Acidentes</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- CSS links -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/adm.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/geral.css') }}">
+</head>
+<body>
+    <main>
+        <div class="container">
+
+            <h3>Relatos: </h3>
+
+            {% for mensagem in mensagens %}
+
+                {% if mensagem['aprovada'] == 0 %}
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{mensagem['usuario']['nome']}}</h5>
+                            <p class="card-text">{{mensagem['mensagem']}}</p>
+                            <a href="/aceitar/{{mensagem['id']}}" class="card-link aceitar">Aceitar</a>
+                            <a href="/remover/{{mensagem['id']}}" class="card-link remover">Remover</a>
+                        </div>
+                    </div>
+
+                {% endif %}
+
+            {% endfor %}
+
+        </div>
+        <div class="container">
+
+            <h3>Profissionais: </h3>
+
+            {% for profissional in profissionais %}
+
+                {% if profissional['aprovado'] == 0 %}
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{profissional['nome']}}</h5>
+                            <p class="card-text">{{profissional['telefone']}}</p>
+                            <p class="card-text">{{profissional['especialidade']}}</p>
+                            <p class="card-text">{{profissional['cidade']}} - {{profissional['estado']}}</p>
+                            <a href="/aceitar-profissional/{{profissional['id']}}" class="card-link aceitar">Aceitar</a>
+                            <a href="/remover-profissional/{{profissional['id']}}" class="card-link remover">Remover</a>
+                        </div>
+                    </div>
+
+                {% endif %}
+
+            {% endfor %}
+
+        </div>
+    </main>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

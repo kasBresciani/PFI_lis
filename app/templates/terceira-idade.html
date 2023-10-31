@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Terceira Idade</title>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- CSS links -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/desc.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="navbar-brand" width="90">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/geral">Geral</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contato">Entre em Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tea">TEA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/acidentes">Acidentes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/educacao">Educação Infantil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/terceira-idade">Terceira Idade</a>
+                    </li>
+                </ul>
+                <div class="navbar-text">
+                    <div class="user-profile">
+
+                        {% if foto != '' %}
+
+                        <img src="data:image/jpg;base64,{{foto}}" alt="Imagem" width="70" id="profile-img" style="border-radius: 100%;" >
+
+                        {% else %}
+
+                        <img src="{{url_for('static', filename='images/user.png') }}" alt="Imagem" width="70" id="profile-img" style="border-radius: 100%;" >
+
+                        {% endif %}
+
+                        <div class="profile-menu" id="profile-menu">
+                            <div class="text-center">
+                                {% if foto != '' %}
+
+                                <img src="data:image/jpg;base64,{{foto}}" alt="Imagem" width="70" id="profile-img" style="border-radius: 100%;" >
+
+                                {% else %}
+
+                                <img src="{{url_for('static', filename='images/user.png') }}" alt="Imagem" width="70" id="profile-img" style="border-radius: 100%;" >
+
+                                {% endif %}
+                                <a href="/alterar-foto"><p>Alterar foto</p></a>
+                                <hr class="divider">
+                            </div>
+                            {% if session['adm'] == True %}
+                                <div style="display: flex; justify-content: center; align-items: center;">
+                                    <a class="btn btn-sair" href="/adm" style="color: white;">ADM</a>
+                                </div> <br>
+                            {% endif %}
+                            <div style="display: flex; justify-content: center; align-items: center;">
+                                <a class="btn btn-sair" href="/sair" style="color: white;">Sair</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+      <main>
+        <div class="container">
+            <div class="card-title">Como  agir com os Idosos?</div>
+            <div class="card-text">
+                <p>
+                    Os profissionais que atendem os idosos em meios comerciais, e da saúde precisam agir de forma atenciosa, considerando as opiniões ditas pelo o idoso, adaptando o local para que eles possam se sentir confortáveis e seguros, valorizando suas experiências e incluindo nos assuntos discutidos.
+                   <hr>
+                    Para definir o envelhecimento e gerar soluções para melhorar a inclusão dos idosos na sociedade, é preciso ouvir como os próprios definem essa etapa da vida, sem suposições e preconceitos, pois cada indivíduo apresenta suas próprias concepções, o que torna lamentável quando a velhice é tratada de forma homogênea.
+                    <hr>
+                    Os idosos elogiam uma consulta quando o profissional é educado, respeitoso e atencioso, destacam que é um ponto positivo quando o atendente conversa com eles,  mostrando interesse na vida pessoal e no problema de saúde do mesmo, dessa forma, os profissionais precisam compreender as especificações do idoso, atendendo suas necessidades, devem conversar com o paciente, para assim os idosos se sentirem valorizados no meio social.
+                    <hr>
+                   Para preservar uma boa convivência com o idoso é importante:
+                   <br> <br>
+                  . Ter paciência, sempre buscar a ouvir e evitar discussões desnecessárias
+                  <br> <br>
+                 . Compreender as escolhas dos idosos, por mais que para alcançar o bem-estar físico do mesmo é preciso tomar tal atitude, não imponha uma ordem, de escolhas e alternativas, fique atento aos pedidos do idoso, é preciso ser inteligente na forma em que apresenta uma proposta para não gerar conflito, valorizar a opinião ajuda na autoestima do idoso e na própria visão da sua identidade, melhorando a autoconfiança que é perdida ao longo da vida.
+                 <br> <br>
+                 . Promova atividades de socialização, como o idoso perdeu sua independência ao longo da vida, o dia a dia pode ser entedioso por possuir limitações físicas, por isso é importante investir em jogos, de baralho, xadrez, com demais pessoas, para alcançar um bom convívio, atividades propostas pelo Terapeuta Ocupacional é uma ótima alternativa.
+                 <br> <br>
+                 . Rotina certa, desenvolva com o idoso, e se possível com um profissional como o Terapeuta Ocupacional uma rotina saudável, como atividades físicas e motoras, trabalhe a alimentação, as consultas médicas e as atividades realizadas durante a semana.
+
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='javascript/script.js') }}"></script>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

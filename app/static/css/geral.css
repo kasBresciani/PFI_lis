@@ -1,0 +1,35 @@
+.card{
+    background-color: #FFBD59;
+}
+.card-img-top{
+    width: 20%;
+}
+body, html {
+    height: 100%;
+}
+.container-centralizado {
+    display: flex;
+    justify-content: center; /* Centralize horizontalmente */
+    align-items: center; /* Centralize verticalmente */
+    height: 100%;
+}
+#mensagemCarousel{
+    width: 90%;
+}
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.floating-button:hover {
+    background-color: white;
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>TEA</title>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+   <!-- CSS links -->
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/desc.css') }}">
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="navbar-brand" width="90">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/geral">Geral</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contato">Entre em Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tea">TEA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/acidentes">Acidentes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/educacao">Educação Infantil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/terceira-idade">Terceira Idade</a>
+                    </li>
+                </ul>
+                <div class="navbar-text">
+                    <div class="user-profile">
+
+                        {% if foto != '' %}
+
+                        <img src="data:image/jpg;base64,{{foto}}" alt="Imagem" width="70" id="profile-img" style="border-radius: 100%;" >
+
+                        {% else %}
+
+                        <img src="{{url_for('static', filename='images/user.png') }}" alt="Imagem" width="70" id="profile-img" style="border-radius: 100%;" >
+
+                        {% endif %}
+
+                        <div class="profile-menu" id="profile-menu">
+                            <div class="text-center">
+                                {% if foto != '' %}
+
+                                <img src="data:image/jpg;base64,{{foto}}" alt="Imagem" width="70" id="profile-img" style="border-radius: 100%;" >
+
+                                {% else %}
+
+                                <img src="{{url_for('static', filename='images/user.png') }}" alt="Imagem" width="70" id="profile-img" style="border-radius: 100%;" >
+
+                                {% endif %}
+                                <a href="/alterar-foto"><p>Alterar foto</p></a>
+                                <hr class="divider">
+                            </div>
+                            {% if session['adm'] == True %}
+                                <div style="display: flex; justify-content: center; align-items: center;">
+                                    <a class="btn btn-sair" href="/adm" style="color: white;">ADM</a>
+                                </div> <br>
+                            {% endif %}
+                            <div style="display: flex; justify-content: center; align-items: center;">
+                                <a class="btn btn-sair" href="/sair" style="color: white;">Sair</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+  <main>
+    <div class="container">
+        <div class="card-title">Transtorno do Espectro Autista</div>
+        <div class="card-text">
+            <p>
+        
+
+                Autismo: O autismo é um transtorno do neurodesenvolvimento. Nem sempre é possível identificar imediatamente quem é autista e quem não é. É importante lembrar que o autismo não é uma doença. Na verdade, tratá-lo como tal pode ser ofensivo para a pessoa que nasceu com Transtorno do Espectro Autista (TEA) e também para sua família. O autismo não está associado a risco de morte.
+                <hr>
+                Aqui estão algumas orientações sobre como lidar com o autismo: 
+                <hr>
+                1. Entenda como essas interações afetam os autistas, pois eles podem ser mais sensíveis ao toque do que as pessoas em geral. Ao explicar algo a um autista, evite ironias, expressões ambíguas ou termos muito abstratos. Muitos autistas compreendem as coisas de maneira direta e objetiva, e sinais não verbais como piscadas ou gestos podem não ser óbvios para eles.
+                <hr>
+                2. Os autistas podem se incomodar com barulhos, confusões e mudanças na rotina. Portanto, mantenha uma postura que acalme em vez de agitar. Se for visitar a casa de uma família com um autista, agende com antecedência e evite cancelamentos de última hora.
+                <hr>
+                3. Facilite a comunicação mantendo algo interessante por perto para a criança, mas sem entregá-lo completamente. Isso incentivará o autista a se comunicar e pedir ajuda.
+                <hr>
+                4. Muitos autistas são visualmente estimulados. Portanto, o ensino pode funcionar melhor por meio de desenhos, gestos, fotos, vídeos ou outros recursos que chamem mais atenção do que simplesmente falar.
+                <hr>
+                5. Essa dica é especialmente relevante para os pais. Crianças com TEA podem ter dificuldade em entender regras e limites, mas ainda assim é importante estabelecê-los.
+            </p>
+        </div>
+    </div>
+</main>
+
+    <script src="{{ url_for('static', filename='javascript/script.js') }}"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

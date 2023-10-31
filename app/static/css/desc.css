@@ -1,0 +1,22 @@
+.container {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background: linear-gradient(90deg, #ff66c4, #ffde59);
+    border-radius: 20px;
+}
+.card-title{
+    color: white;
+    font-weight: 700;
+    font-size: 200%;
+}
+.card-text{
+    text-align: justify;
+    padding: 10px;
+    font-weight: 400;
+    color: black;
+}
+.imagem-direita {
+    float: right;
+    margin-left: 20px;
+}

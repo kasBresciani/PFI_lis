@@ -1,0 +1,31 @@
+@media (max-width: 576px) {
+    .card-img-top{
+        width: 20%;
+    }
+    #cont{
+        margin: 10px;
+    }
+}
+.card{
+    background-color: #FFBD59;
+}
+.card-img-top{
+    width: 10%;
+}
+.form-label{
+    font-weight: 700;
+}
+.btn {
+    background-color: white;
+    color: black;
+    font-weight: 700;
+    border-radius: 30px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 10px;
+}
+.btn:hover{
+    background-color: azure;
+}
